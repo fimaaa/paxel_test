@@ -7,8 +7,13 @@ import retrofit2.http.Path
 
 interface EmployeeApi {
 
-    @GET("employees{search}")
+    @GET("employees")
+    suspend fun getEmployeesData(
+//        @Path("search") search: String?
+    ): BaseResponse<MutableList<Employee.Data>>
+
+    @GET("employee/{search}")
     suspend fun getEmployeeData(
         @Path("search") search: String?
-    ): BaseResponse<MutableList<Employee.Data>>
+    ): BaseResponse<Employee.Data>
 }

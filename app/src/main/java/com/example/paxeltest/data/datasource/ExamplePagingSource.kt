@@ -17,14 +17,18 @@ class ExamplePagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Employee.Data> {
         return try {
             val position = params.key ?: STARTING_PAGE_INDEX
-            val response =
-                employeeApi.getEmployeeData(if (search.isNullOrEmpty()) "" else "/$search")
+            val list = mutableListOf<Employee.Data>()
+            if (search.isNullOrEmpty()) {
+                val response = employeeApi.getEmployeesData()
+                list.addAll(response.data)
+            } else {
+                val response = employeeApi.getEmployeeData(search)
+                list.add(response.data)
+            }
             // Show only 20 data because no pagination
-            if (response.data.size >= 20)
-                response.data.subList(20, response.data.size).clear()
-            println("TAG Response = $response")
+            if (list.size >= 20) list.subList(20, list.size).clear()
             LoadResult.Page(
-                data = response.data,
+                data = list,
                 prevKey = if (position == STARTING_PAGE_INDEX) null else position - 1,
 //                nextKey = if (response.isNullOrEmpty()) null else position + 1
                 nextKey = null

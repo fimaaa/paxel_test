@@ -78,6 +78,7 @@ class EmployeeFragment : BaseFragment() {
                             val throwable = (loadState.source.refresh as LoadState.Error).error
                             rcvExample.gone()
                             blanklayout.visible()
+                            println("TAG Throwable = $throwable")
                             blanklayout.setType(
                                 ErrorUtils.getErrorThrowableCode(throwable),
                                 ErrorUtils.getErrorThrowableMsg(throwable)
