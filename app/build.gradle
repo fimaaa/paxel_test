@@ -1,0 +1,181 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id "androidx.navigation.safeargs.kotlin"
+    id "org.jetbrains.kotlin.plugin.parcelize"
+    id 'dagger.hilt.android.plugin'
+}
+
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('D:\\project\\Android\\Other\\Paxel_Test\\keystore.jks')
+            storePassword 'abcd1234'
+            keyAlias 'key_alias_paxel'
+            keyPassword 'abcd1234'
+        }
+    }
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.paxeltest"
+        minSdkVersion 21
+        targetSdkVersion 30
+        multiDexEnabled true
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+
+    buildTypes {
+        release {
+            resValue "string", "app_name", "$appName"
+            buildConfigField "String", "VARIANT", "\"release\""
+            minifyEnabled true
+            debuggable false
+            testCoverageEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        staging {
+            resValue "string", "app_name", "$appName-staging"
+            buildConfigField "String", "VARIANT", "\"staging\""
+            applicationIdSuffix ".stage"
+            versionNameSuffix "-stage"
+            minifyEnabled false
+            debuggable true
+            testCoverageEnabled true
+        }
+        debug {
+            resValue "string", "app_name", "$appName-dev"
+            buildConfigField "String", "VARIANT", "\"development\""
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            minifyEnabled false
+            debuggable true
+            testCoverageEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    buildFeatures {
+        dataBinding true
+    }
+    ndkVersion '22.0.7026061'
+    externalNativeBuild {
+        cmake {
+            path file('CMakeLists.txt')
+        }
+    }
+}
+
+dependencies {
+    // Default Component
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "androidx.core:core-ktx:$ktxVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$testExtJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    implementation "org.jetbrains.anko:anko:0.10.8"
+    implementation "org.jetbrains.anko:anko-common:0.10.8"
+
+    // Check Leak Memory
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
+
+    // Networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    // Room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    testImplementation "androidx.room:room-testing:$roomVersion"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // DataBinding
+    kapt "com.android.databinding:compiler:$gradle_version"
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
+
+    // Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    // Dagger Hilt
+//    implementation "com.google.dagger:hilt-android:$hiltVersion"
+//    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidXVersion"
+//    kapt "androidx.hilt:hilt-compiler:$hiltAndroidXVersion"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
+    // Hilt dependencies
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+    // Hilt testing
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hiltVersion"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hiltVersion"
+
+    // Retrofit + GSON
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
+
+    // Change Language
+    implementation 'com.zeugmasolutions.localehelper:locale-helper-android:1.1.4'
+
+    // Paging 3
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
+
+
+    //HTTP Inspector
+    debugImplementation "com.github.chuckerteam.chucker:library:$chuckerVersion"
+    stagingImplementation "com.github.chuckerteam.chucker:library:$chuckerVersion"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
+
+    // Google Ads
+    implementation "com.google.android.gms:play-services-ads:$googleVersion"
+
+    // Google
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    // Style
+    implementation 'com.faltenreich:skeletonlayout:4.0.0'
+    implementation 'com.github.razir.progressbutton:progressbutton:2.0.1'
+}

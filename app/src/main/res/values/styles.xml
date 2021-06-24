@@ -1,0 +1,212 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorOptionalPrimary</item>
+    </style>
+
+    <!-- BottomMenu -->
+    <style name="TextBottomNavigationActive">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextBottomNavigationInactive">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- Dipake -->
+    <style name="title_normal_dark">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="lineHeight">13dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="title_normal_light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="lineHeight">13dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="title_med_dark">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_med</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="lineHeight">17dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="title_med_light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_med</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="lineHeight">17dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="title_large_dark">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="lineHeight">17dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="title_large_light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="lineHeight">17dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="title_xlarge_dark">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_xlarge</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="lineHeight">22dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="title_xlarge_light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_xlarge</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="lineHeight">22dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="desc_small_white">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_xsmall</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="lineHeight">10dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="desc_small_dark">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="lineHeight">10dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="desc_normal_white">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="lineHeight">14dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="desc_normal_dark">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="lineHeight">14dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="desc_normal_grey">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="lineHeight">14dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="desc_med_white">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_med</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="lineHeight">17dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="desc_med_dark">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_med</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="lineHeight">17dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="desc_med_grey">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_med</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="lineHeight">17dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="content_bold_dark">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="lineHeight">13dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="content_normal_grey">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="lineHeight">13dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="tag_bold_sun">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorOptionalPrimary</item>
+        <item name="lineHeight">11dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!-- Dialog -->
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorSecondary</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
+    </style>
+
+    <style name="DatePickerButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+    </style>
+
+
+    <!-- SearchView -->
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Gets rid of the search icon -->
+        <item name="searchIcon">@drawable/ic_search</item>
+        <!-- Gets rid of the "underline" in the text -->
+        <item name="queryBackground">@android:color/transparent</item>
+        <!-- Gets rid of the search icon when the SearchView is expanded -->
+        <item name="searchHintIcon">@null</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">Search News</item>
+    </style>
+
+    <!-- BottomSheet -->
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetPrimaryModal</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorOptionalPrimary</item>
+    </style>
+
+    <style name="BottomSheetPrimaryStyle" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetPrimaryModal</item>
+    </style>
+
+    <style name="BottomSheetPrimaryModal" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/shape_bottom_sheet</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="SwitchCompatTheme" >
+        <item name="thumbTint">@color/colorPrimary</item>
+        <item name="trackTint">@color/colorSecondary</item>
+    </style>
+
+</resources>
