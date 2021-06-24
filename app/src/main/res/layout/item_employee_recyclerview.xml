@@ -16,7 +16,7 @@
             android:layout_margin="@dimen/dimen_small"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            imageUrl="@{data.avatar_url}"
+            imageUrl="@{data.profile_image}"
             tools:src="@drawable/ic_launcher_background"
             />
         <androidx.appcompat.widget.AppCompatTextView
@@ -30,7 +30,7 @@
             android:layout_margin="@dimen/dimen_small"
             android:gravity="center|start"
             style="@style/title_normal_dark"
-            android:text="@{data.login}"
+            android:text="@{data.employee_name}"
             tools:text="Defunkt"
             />
         <androidx.appcompat.widget.AppCompatTextView
@@ -44,7 +44,7 @@
             android:layout_margin="@dimen/dimen_small"
             android:gravity="center|start"
             style="@style/desc_normal_dark"
-            android:text="@{data.type}"
+            android:text="@{data.employee_age}"
             tools:text="User"
             />
         <androidx.appcompat.widget.AppCompatTextView
@@ -65,6 +65,6 @@
     <data>
         <variable
             name="data"
-            type="com.example.paxeltest.data.model.Example.Data" />
+            type="com.example.paxeltest.data.model.Employee.Data" />
     </data>
 </layout>

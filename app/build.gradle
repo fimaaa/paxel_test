@@ -6,6 +6,8 @@ plugins {
     id "org.jetbrains.kotlin.plugin.parcelize"
     id 'dagger.hilt.android.plugin'
 }
+apply from: '../ktlint.gradle'
+
 
 def versionMajor = 1
 def versionMinor = 0

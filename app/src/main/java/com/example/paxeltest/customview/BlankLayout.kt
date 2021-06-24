@@ -101,7 +101,6 @@ class BlankLayout @JvmOverloads constructor(
                 onClick.invoke()
             }
         }
-
     }
 
     fun setButtonVisibility(isVisible: Boolean) {

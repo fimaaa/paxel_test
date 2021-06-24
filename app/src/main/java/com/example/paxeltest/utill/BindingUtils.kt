@@ -25,7 +25,6 @@ import com.github.razir.progressbutton.showProgress
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import java.util.*
 
-
 @BindingAdapter("textHTML")
 fun TextView.setHTMLText(value: String?) {
     val mContext = BaseApplication.applicationContext()

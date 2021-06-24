@@ -4,18 +4,18 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.example.paxeltest.data.datasource.ExamplePagingSource
-import com.example.paxeltest.data.model.Example
-import com.example.paxeltest.data.source.dao.ExampleDao
-import com.example.paxeltest.data.source.endpoint.ExampleApi
+import com.example.paxeltest.data.model.Employee
+import com.example.paxeltest.data.source.dao.EmployeeDao
+import com.example.paxeltest.data.source.endpoint.EmployeeApi
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ExampleRepository @Inject constructor(
-    private val exampleDao: ExampleDao,
-    private val movieApi: ExampleApi
-){
-    suspend fun addToFavorite(example: Example.Data) = exampleDao.addExample(example)
+class EmployeeRepository @Inject constructor(
+    private val exampleDao: EmployeeDao,
+    private val movieApi: EmployeeApi
+) {
+    suspend fun addToFavorite(example: Employee.Data) = exampleDao.addExample(example)
     fun getFavoriteMovies() = exampleDao.getAllExample()
     suspend fun checkMovie(id: String) = exampleDao.checkExample(id)
     suspend fun removeFromFavorite(id: String) {
@@ -30,6 +30,6 @@ class ExampleRepository @Inject constructor(
                 enablePlaceholders = false,
                 prefetchDistance = 10
             ),
-            pagingSourceFactory = {ExamplePagingSource(movieApi)}
+            pagingSourceFactory = { ExamplePagingSource(movieApi) }
         ).liveData
 }

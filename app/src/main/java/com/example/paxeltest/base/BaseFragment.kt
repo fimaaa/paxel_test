@@ -14,7 +14,7 @@ import kotlinx.coroutines.Job
 abstract class BaseFragment(
     private val toolbarShow: Boolean = false,
     private val statusBarShow: Boolean = true
-): Fragment() {
+) : Fragment() {
 
 //    @Inject
 //    lateinit var prefs: PrefManagerImp

@@ -22,6 +22,7 @@ object ErrorUtils {
                     HttpsURLConnection.HTTP_INTERNAL_ERROR -> "Terjadi gangguan pada server"
                     HttpsURLConnection.HTTP_BAD_REQUEST -> "Data tidak sesuai"
                     HttpsURLConnection.HTTP_FORBIDDEN -> "Sesi telah berakhir"
+                    429 -> "Terlalu Banyak Request"
                     else -> "Oops, Terjadi gangguan, coba lagi beberapa saat"
                 }
             }

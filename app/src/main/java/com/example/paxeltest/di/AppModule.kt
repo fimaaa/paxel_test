@@ -3,11 +3,9 @@ package com.example.paxeltest.di
 import android.content.Context
 import androidx.room.Room
 import com.chuckerteam.chucker.api.ChuckerInterceptor
-import com.example.paxeltest.BuildConfig
 import com.example.paxeltest.base.BaseApplication
-import com.example.paxeltest.data.enum.EnumBuild
 import com.example.paxeltest.data.local.AppDatabase
-import com.example.paxeltest.data.source.endpoint.ExampleApi
+import com.example.paxeltest.data.source.endpoint.EmployeeApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,7 +25,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideFavMovieDatabase(
-        @ApplicationContext app:Context
+        @ApplicationContext app: Context
     ) = Room.databaseBuilder(
         app,
         AppDatabase::class.java,
@@ -70,9 +68,8 @@ object AppModule {
         okHttpClientBuilder.build()
     }
 
-
     @Provides
     @Singleton
-    fun provideMovieApi(retrofit: Retrofit): ExampleApi =
-        retrofit.create(ExampleApi::class.java)
+    fun provideMovieApi(retrofit: Retrofit): EmployeeApi =
+        retrofit.create(EmployeeApi::class.java)
 }

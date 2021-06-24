@@ -8,24 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.paxeltest.base.BaseFragment
 import com.example.paxeltest.databinding.FragmentSplashscreenBinding
 
-class SplashScreenFragment
-//    : Fragment() {
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        val binding = FragmentSplashscreenBinding.inflate(inflater)
-//        return binding.root
-//    }
-//
-//    override fun onStart() {
-//        super.onStart()
-//        findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToExampleFragment())
-//    }
-
-
-    :BaseFragment() {
+class SplashScreenFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

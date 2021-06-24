@@ -8,16 +8,16 @@
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_paxeltest_di_ExternalDataKt_getStagingBaseUrl(JNIEnv *env, jclass clazz) {
-    return env->NewStringUTF("https://api.github.com/");
+    return env->NewStringUTF("https://dummy.restapiexample.com/api/v1/");
 }
 
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_paxeltest_di_ExternalDataKt_getReleaseBaseUrl(JNIEnv *env, jclass clazz) {
-    return env->NewStringUTF("https://api.github.com/");
+    return env->NewStringUTF("https://dummy.restapiexample.com/api/v1/");
 }
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_paxeltest_di_ExternalDataKt_getDebugBaseUrl__(JNIEnv *env, jclass clazz) {
-    return env->NewStringUTF("https://api.github.com/");
+    return env->NewStringUTF("https://dummy.restapiexample.com/api/v1/");
 }

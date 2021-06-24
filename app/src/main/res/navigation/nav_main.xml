@@ -18,8 +18,8 @@
     </fragment>
     <fragment
         android:id="@+id/exampleFragment"
-        android:name="com.example.paxeltest.ui.example.ExampleFragment"
+        android:name="com.example.paxeltest.ui.employee.EmployeeFragment"
         android:label="ExampleFragment"
-        tools:layout="@layout/fragment_example"
+        tools:layout="@layout/fragment_employee"
         />
 </navigation>

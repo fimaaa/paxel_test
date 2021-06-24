@@ -3,7 +3,7 @@ package com.example.paxeltest.preference
 import android.content.Context
 import javax.inject.Inject
 
-class PrefManagerImp@Inject constructor(context: Context): PrefManager {
+class PrefManagerImp @Inject constructor(context: Context) : PrefManager {
 
     companion object {
         const val USER_NAME = "user_name"

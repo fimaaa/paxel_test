@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_example_recyclerview"
+            tools:listitem="@layout/item_employee_recyclerview"
             />
         <com.example.paxeltest.customview.BlankLayout
             android:id="@+id/blanklayout"

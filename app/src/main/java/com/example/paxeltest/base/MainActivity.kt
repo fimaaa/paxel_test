@@ -14,7 +14,7 @@ import com.google.android.gms.ads.RequestConfiguration
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity :  AppCompatActivity(), MainView {
+class MainActivity : AppCompatActivity(), MainView {
 
     private var menuToolbar = 0
     private var registeredHandler: (() -> Unit)? = null
