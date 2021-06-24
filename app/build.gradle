@@ -16,7 +16,7 @@ def versionPatch = 0
 android {
     signingConfigs {
         release {
-            storeFile file('D:\\project\\Android\\Other\\Paxel_Test\\keystore.jks')
+            storeFile file('D:\\project\\Android\\Other\\paxel\\paxel_sideproject\\key_store.jks')
             storePassword 'abcd1234'
             keyAlias 'key_alias_paxel'
             keyPassword 'abcd1234'

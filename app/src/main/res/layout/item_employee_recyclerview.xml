@@ -59,7 +59,7 @@
             android:gravity="center|end"
             style="@style/desc_normal_dark"
             android:textColor="@color/colorOptionalPrimary"
-            android:text="@string/link_here"
+            app:textPrice="@{data.employee_salary}"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <data>

@@ -7,4 +7,6 @@
     <string name="login">Log In</string>
     <string name="retry">Retry</string>
     <string name="link_here">Link Here</string>
+
+    <string name="format_price">Rp%1$s</string>
 </resources>

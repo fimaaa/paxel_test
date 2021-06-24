@@ -8,7 +8,7 @@ import java.net.UnknownHostException
 import javax.net.ssl.HttpsURLConnection
 
 object ErrorUtils {
-    fun getErrorThrowableMsg(error: Throwable): String = when (error) {
+    fun getErrorThrowableMsg(error: Throwable, content: String = "Data"): String = when (error) {
         is HttpException ->
             try {
                 val errorJsonString = error.response()?.errorBody()?.string()
@@ -18,7 +18,7 @@ object ErrorUtils {
             } catch (e: Exception) {
                 when (error.code()) {
                     HttpsURLConnection.HTTP_UNAUTHORIZED -> "Tidak dapat mengakses data"
-                    HttpsURLConnection.HTTP_NOT_FOUND, HttpsURLConnection.HTTP_NO_CONTENT -> "Data tidak ditemukan"
+                    HttpsURLConnection.HTTP_NOT_FOUND, HttpsURLConnection.HTTP_NO_CONTENT -> content
                     HttpsURLConnection.HTTP_INTERNAL_ERROR -> "Terjadi gangguan pada server"
                     HttpsURLConnection.HTTP_BAD_REQUEST -> "Data tidak sesuai"
                     HttpsURLConnection.HTTP_FORBIDDEN -> "Sesi telah berakhir"

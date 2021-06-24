@@ -22,7 +22,9 @@ class EmployeeRepository @Inject constructor(
         exampleDao.removeExample(id)
     }
 
-    fun getExampleDataset() =
+    fun getExampleDataset(
+        search: String?
+    ) =
         Pager(
             config = PagingConfig(
                 pageSize = 30,
@@ -30,6 +32,6 @@ class EmployeeRepository @Inject constructor(
                 enablePlaceholders = false,
                 prefetchDistance = 10
             ),
-            pagingSourceFactory = { ExamplePagingSource(movieApi) }
+            pagingSourceFactory = { ExamplePagingSource(movieApi, search) }
         ).liveData
 }

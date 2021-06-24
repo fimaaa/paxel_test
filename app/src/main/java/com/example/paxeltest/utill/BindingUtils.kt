@@ -190,3 +190,9 @@ fun WebView.setLoadText(
         )
     }
 }
+
+@BindingAdapter("textPrice")
+fun TextView.setPriceText(value: Double?) {
+    text =
+        CurrencyUtils.simpleCovertCurrency(context, value.toString())
+}
