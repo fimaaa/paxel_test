@@ -16,8 +16,7 @@
             android:layout_margin="@dimen/dimen_small"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            imageUrl="@{data.profile_image}"
-            tools:src="@drawable/ic_launcher_background"
+            app:setProfile="@{data.profile_image}"
             />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_user_name"
